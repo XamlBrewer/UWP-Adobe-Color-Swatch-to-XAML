@@ -1,69 +1,33 @@
-﻿using Mvvm.Services;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Storage;
-using Windows.Storage.Pickers;
-using Windows.UI;
-using Windows.UI.Xaml;
+﻿using Mvvm;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using XamlBrewer.Pcl.ColorSwatchReader;
-using XamlBrewer.Uwp.ColorSwatchReader.Models;
+using XamlBrewer.Uwp.ColorSwatchReader.ViewModels;
 
 namespace XamlBrewer.Uwp.ColorSwatchReader
 {
     public sealed partial class MainPage : Page
     {
+        private MenuItem openItem;
+
         public MainPage()
         {
             this.InitializeComponent();
+            openItem = new MenuItem() { Glyph = Symbol.OpenFile, Text = "Open", Command = ViewModel.OpenCommand };
+            ViewModel.Menu.Add(openItem);
         }
 
-        public ObservableCollection<NamedColor> Palette { get; set; } = new ObservableCollection<NamedColor>();
+        private MainPageViewModel ViewModel { get; } = new MainPageViewModel();
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var openPicker = new FileOpenPicker();
-            openPicker.SuggestedStartLocation = PickerLocationId.Desktop;
-            openPicker.FileTypeFilter.Add(".aco");
-            StorageFile file = await openPicker.PickSingleFileAsync();
-            if (file != null)
-            {
-                try
-                {
-                    // User picked a file. 
-                    var stream = await file.OpenStreamForReadAsync();
-                    var reader = new AcoConverter();
-                    var swatchColors = reader.ReadPhotoShopSwatchFile(stream);
-                    Palette.Clear();
-                    foreach (var color in swatchColors)
-                    {
-                        var pc = new NamedColor(color.Red, color.Green, color.Blue, color.Name);
-                        Palette.Add(pc);
-                        Log.Error(pc.Color.ToString());
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Log.Error(ex.Message);
-                    Toast.ShowError("Oops, something went wrong.");
-                }
-            }
-            else
-            {
-                // User cancelled.
-                Toast.ShowWarning("Operation cancelled.");
-            }
-        }
+        //protected override void OnNavigatedTo(NavigationEventArgs e)
+        //{
+
+        //    base.OnNavigatedTo(e);
+        //}
+
+        //protected override void OnNavigatedFrom(NavigationEventArgs e)
+        //{
+        //    ViewModel.Menu.Remove(openItem);
+        //    base.OnNavigatedFrom(e);
+        //}
     }
 }

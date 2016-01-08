@@ -13,8 +13,8 @@ namespace XamlBrewer.Uwp.ColorSwatchReader
             this.InitializeComponent();
 
             // Navigate to the first page.
-            var type = (DataContext as ShellViewModel).Menu.First().NavigationDestination;
-            SplitViewFrame.Navigate(type);
+            // var type = (DataContext as ShellViewModel).Menu.First().NavigationDestination;
+            SplitViewFrame.Navigate(typeof(MainPage));
         }
 
         // Navigate to another page.
@@ -27,10 +27,17 @@ namespace XamlBrewer.Uwp.ColorSwatchReader
                 {
                     SplitViewFrame.Navigate(menuItem.NavigationDestination);
                 }
-                else
-                {
-                    menuItem.Command.Execute(null);
-                }
+              }
+        }
+
+        // Execute command.
+        private void Menu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var menuItem = e.ClickedItem as MenuItem;
+
+            if (!menuItem.IsNavigation)
+            {
+                menuItem.Command.Execute(null);
             }
         }
 

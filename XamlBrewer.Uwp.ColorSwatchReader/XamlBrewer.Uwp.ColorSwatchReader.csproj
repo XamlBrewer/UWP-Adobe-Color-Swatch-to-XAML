@@ -107,6 +107,7 @@
     <Compile Include="Services\Log.cs" />
     <Compile Include="Services\Scope.cs" />
     <Compile Include="Services\Toast.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

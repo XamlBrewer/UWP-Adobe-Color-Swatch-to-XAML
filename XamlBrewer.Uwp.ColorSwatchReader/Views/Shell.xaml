@@ -36,17 +36,19 @@
                       Background="{StaticResource SplitViewBackgroundBrush}">
                     <ListView ItemsSource="{Binding Menu}"
                               SelectionChanged="Menu_SelectionChanged"
+                              ItemClick="Menu_ItemClick"
                               Margin="0 48 0 0"
-                              VerticalAlignment="Top">
+                              VerticalAlignment="Top"
+                              IsItemClickEnabled="True">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
                                     <SymbolIcon x:Name="Glyph"
-                                              Symbol="{Binding Glyph}"
-                                              VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"
-                                              Foreground="{StaticResource SplitViewForegroundBrush}"
-                                              ToolTipService.ToolTip="{Binding Text}" />
+                                                Symbol="{Binding Glyph}"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"
+                                                Foreground="{StaticResource SplitViewForegroundBrush}"
+                                                ToolTipService.ToolTip="{Binding Text}" />
                                     <TextBlock Text="{Binding Text}"
                                                Margin="8 0 0 0"
                                                Foreground="{StaticResource SplitViewForegroundBrush}" />

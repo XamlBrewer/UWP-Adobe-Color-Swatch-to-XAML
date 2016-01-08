@@ -12,14 +12,8 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Press this button to open an .aco file: "
-                       VerticalAlignment="Center" />
-            <Button Content="Open"
-                    Click="Button_Click"
-                    Margin="20 0" />
-        </StackPanel>
-        <GridView ItemsSource="{x:Bind Palette}"
+        <TextBlock Text="Tap 'import' to open and read an Adobe Photoshop .aco file." />
+        <GridView ItemsSource="{x:Bind ViewModel.Palette}"
                   Grid.Row="1"
                   Margin="0 20 0 0">
             <GridView.ItemTemplate>
