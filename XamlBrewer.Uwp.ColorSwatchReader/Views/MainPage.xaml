@@ -1,13 +1,40 @@
-﻿<Page
-    x:Class="XamlBrewer.Uwp.ColorSwatchReader.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:XamlBrewer.Uwp.ColorSwatchReader"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+﻿<Page x:Class="XamlBrewer.Uwp.ColorSwatchReader.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:XamlBrewer.Uwp.ColorSwatchReader"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button Content="Open a .aco file" Click="Button_Click" Margin="200"/>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+          Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Press this button to open an .aco file: "
+                       VerticalAlignment="Center" />
+            <Button Content="Open"
+                    Click="Button_Click"
+                    Margin="20 0" />
+        </StackPanel>
+        <GridView ItemsSource="{x:Bind Palette}"
+                  Grid.Row="1"
+                  Margin="0 20 0 0">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Width="120">
+                        <TextBlock Text="{Binding Name}"
+                                   FontSize="12" />
+                        <Border Height="80">
+                            <Border.Background>
+                                <SolidColorBrush Color="{Binding Color}" />
+                            </Border.Background>
+                        </Border>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
     </Grid>
 </Page>
