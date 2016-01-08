@@ -93,6 +93,7 @@
     <None Include="Assets\Samples\cssdrive.aco" />
     <None Include="Assets\Samples\db16.aco" />
     <None Include="Assets\Samples\db32.aco" />
+    <None Include="Assets\Samples\Material Palette.aco" />
     <None Include="Assets\Samples\paletton.aco" />
     <None Include="Assets\Samples\standard.aco" />
     <None Include="Assets\Samples\websafe.aco" />

@@ -12,7 +12,11 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBlock Text="Tap 'import' to open and read an Adobe Photoshop .aco file." />
+        <TextBlock>
+            <Run Text="Tap 'open' to read all colors in a Adobe Photoshop Color Swatch (*.aco) file." />
+            <LineBreak />
+            <Run Text="Tap 'save' to export these colors to XAML brush definitions." />
+        </TextBlock>
         <GridView ItemsSource="{x:Bind ViewModel.Palette}"
                   Grid.Row="1"
                   Margin="0 20 0 0">

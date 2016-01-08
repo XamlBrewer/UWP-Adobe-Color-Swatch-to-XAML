@@ -7,7 +7,7 @@
       mc:Ignorable="d"
       xmlns:vm="using:Mvvm">
     <Page.Resources>
-        <SolidColorBrush x:Key="SplitViewBackgroundBrush"
+        <SolidColorBrush x:Key='SplitViewBackgroundBrush'
                          Color="Coral" />
         <SolidColorBrush x:Key="SplitViewForegroundBrush"
                          Color="White" />

@@ -1,4 +1,5 @@
-﻿using Windows.UI;
+﻿using System;
+using Windows.UI;
 
 namespace XamlBrewer.Uwp.ColorSwatchReader.Models
 {
@@ -16,5 +17,10 @@ namespace XamlBrewer.Uwp.ColorSwatchReader.Models
         public string Name { get; set; }
 
         public Color Color { get; set; }
+
+        public string AsXamlResource() {
+            // Using string interpolation.
+            return $"<SolidColorBrush x:Key='{Name}' Color='{Color}' /> ";
+        }
     }
 }
