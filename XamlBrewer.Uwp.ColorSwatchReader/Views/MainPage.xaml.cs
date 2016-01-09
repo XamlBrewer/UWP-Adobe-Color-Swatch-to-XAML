@@ -6,6 +6,7 @@ namespace XamlBrewer.Uwp.ColorSwatchReader
 {
     public sealed partial class MainPage : Page
     {
+        // Splitview menu items.
         private MenuItem openItem;
         private MenuItem saveItem;
 

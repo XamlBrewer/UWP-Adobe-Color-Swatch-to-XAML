@@ -1,4 +1,5 @@
-﻿// Reading PhotoShop Color Swatch (aco) files using C#
+﻿// Adapted from:
+// Reading PhotoShop Color Swatch (aco) files using C#
 // http://cyotek.com/blog/reading-photoshop-color-swatch-aco-files-using-csharp
 
 using System.Collections.Generic;

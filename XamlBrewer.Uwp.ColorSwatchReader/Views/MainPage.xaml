@@ -15,7 +15,7 @@
         <TextBlock>
             <Run Text="Tap 'open' to read all colors in a Adobe Photoshop Color Swatch (*.aco) file." />
             <LineBreak />
-            <Run Text="Tap 'save' to export these colors to XAML brush definitions." />
+            <Run Text="Tap 'save' to export these colors to a file with XAML brush definitions." />
         </TextBlock>
         <GridView ItemsSource="{x:Bind ViewModel.Palette}"
                   Grid.Row="1"

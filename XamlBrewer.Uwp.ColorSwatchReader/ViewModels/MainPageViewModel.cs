@@ -36,6 +36,9 @@ namespace XamlBrewer.Uwp.ColorSwatchReader.ViewModels
             get { return saveCommand; }
         }
 
+        /// <summary>
+        /// Opens a Adobe Color Swatch file, and reads its content.
+        /// </summary>
         private async void Open_Executed()
         {
             var openPicker = new FileOpenPicker();
@@ -69,6 +72,10 @@ namespace XamlBrewer.Uwp.ColorSwatchReader.ViewModels
                 Toast.ShowWarning("Operation cancelled.");
             }
         }
+
+        /// <summary>
+        /// Creates a text file with XAML brushes for a list of named colors.
+        /// </summary>
         private async void Save_Executed()
         {
             var savePicker = new FileSavePicker();
@@ -98,6 +105,7 @@ namespace XamlBrewer.Uwp.ColorSwatchReader.ViewModels
 
         private bool Save_CanExecute()
         {
+            // OK, I was a bit lazy...
             return true;
         }
     }
