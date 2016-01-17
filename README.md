@@ -7,3 +7,5 @@ Contains
 * some sample *.aco files in the Assets/Samples folder.
 
 PCL code is slightly adapted from http://cyotek.com/blog/reading-photoshop-color-swatch-aco-files-using-csharp.
+
+A blog post with background information -including some nice resources to create great color themes- is here: https://xamlbrewer.wordpress.com/2016/01/10/how-to-generate-an-adobe-color-swatch-and-transform-it-to-xaml-brushes/.
