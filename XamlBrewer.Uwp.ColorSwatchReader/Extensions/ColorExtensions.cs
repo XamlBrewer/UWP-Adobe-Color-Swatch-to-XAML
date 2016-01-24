@@ -26,5 +26,13 @@ namespace XamlBrewer.Uwp
         {
             return color.Luminance() < .5 ? Colors.White : Colors.Black;
         }
+
+        /// <summary>
+        /// Returns the complementary color in RGB space.
+        /// </summary>
+        public static Color ComplementaryColor(this Color color)
+        {
+            return Color.FromArgb(color.A, (byte)(255 - color.R), (byte)(255 - color.G), (byte)(255 - color.B));
+        }
     }
 }

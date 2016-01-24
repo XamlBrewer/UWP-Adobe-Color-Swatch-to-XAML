@@ -32,5 +32,10 @@ namespace XamlBrewer.Uwp.ColorSwatchReader.Models
         {
             get { return Color.Luminance(); }
         }
+
+        public Color ComplementaryColor
+        {
+            get { return Color.ComplementaryColor(); }
+        }
     }
 }

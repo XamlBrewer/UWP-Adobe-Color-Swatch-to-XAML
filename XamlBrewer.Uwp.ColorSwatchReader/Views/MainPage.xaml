@@ -25,10 +25,10 @@
                     <StackPanel Width="120">
                         <TextBlock Text="{Binding Name}"
                                    FontSize="12" />
-                        <Border Height="80">
-                            <Border.Background>
+                        <Grid Height="80">
+                            <Grid.Background>
                                 <SolidColorBrush Color="{Binding Color}" />
-                            </Border.Background>
+                            </Grid.Background>
                             <TextBlock Text="{Binding Color}"
                                        FontSize="10"
                                        VerticalAlignment="Bottom"
@@ -36,8 +36,18 @@
                                        Margin="4">
                                 <TextBlock.Foreground>
                                     <SolidColorBrush Color="{Binding ContrastingTextColor}" />
-                                </TextBlock.Foreground></TextBlock>
-                        </Border>
+                                </TextBlock.Foreground>
+                            </TextBlock>
+                            <Border Height="20"
+                                    Width="20"
+                                    VerticalAlignment="Bottom"
+                                    HorizontalAlignment="Left"
+                                    Margin="4">
+                                <Border.Background>
+                                    <SolidColorBrush Color="{Binding ComplementaryColor}" />
+                                </Border.Background>
+                            </Border>
+                        </Grid>
                     </StackPanel>
                 </DataTemplate>
             </GridView.ItemTemplate>
