@@ -29,6 +29,14 @@
                             <Border.Background>
                                 <SolidColorBrush Color="{Binding Color}" />
                             </Border.Background>
+                            <TextBlock Text="{Binding Color}"
+                                       FontSize="10"
+                                       VerticalAlignment="Bottom"
+                                       HorizontalAlignment="Right"
+                                       Margin="4">
+                                <TextBlock.Foreground>
+                                    <SolidColorBrush Color="{Binding ContrastingTextColor}" />
+                                </TextBlock.Foreground></TextBlock>
                         </Border>
                     </StackPanel>
                 </DataTemplate>

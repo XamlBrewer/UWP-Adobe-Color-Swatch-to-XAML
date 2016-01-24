@@ -104,6 +104,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Extensions\ColorExtensions.cs" />
     <Compile Include="Models\NamedColor.cs" />
     <Compile Include="Services\Log.cs" />
     <Compile Include="Services\Scope.cs" />

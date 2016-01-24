@@ -34,9 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="AcoConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SwatchColor.cs" />

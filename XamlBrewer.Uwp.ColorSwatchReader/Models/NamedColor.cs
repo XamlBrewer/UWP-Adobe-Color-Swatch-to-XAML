@@ -22,5 +22,15 @@ namespace XamlBrewer.Uwp.ColorSwatchReader.Models
             // Using string interpolation.
             return $"<SolidColorBrush x:Key='{Name}' Color='{Color}' /> ";
         }
+
+        public Color ContrastingTextColor
+        {
+            get { return Color.ContrastingTextColor(); }
+        }
+
+        public double Luminance
+        {
+            get { return Color.Luminance(); }
+        }
     }
 }
